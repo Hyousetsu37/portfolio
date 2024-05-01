@@ -1,0 +1,127 @@
+---
+import Logo from '../SVG/Logo/Logo.astro'
+---
+
+<section class="intro-section" id="start">
+	<div class="topRadial"></div>
+	<article class="intro-container">
+		<div class="image">ImagePlaceHolder</div>
+
+		<div class="text-container">
+			<div class="title-container">
+				<h1>Cristian Marin</h1><span><Logo /></span>
+			</div>
+			<p>
+				Hey there! I'm a front-end developer with a knack for turning ideas into websites. About
+				three years ago, I jumped into the world of web development and haven't looked back. I love
+				using tools like HTML, CSS, and JavaScript to bring creative visions to life, and now I'm
+				all in, making this my career path after a slow start. Stick around to see where this
+				journey takes me!
+			</p>
+		</div>
+	</article>
+	<div class="bottomRadial"></div>
+</section>
+
+<style>
+	.intro-section {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		width: 100%;
+		margin-inline: auto;
+		grid-column: 1/-1;
+		background-color: var(--dark-background);
+		transition: background-color 300ms;
+		overflow: hidden;
+
+		& .topRadial {
+			position: absolute;
+			z-index: 0;
+			right: 0;
+			top: 0;
+			transform: translate(50%, -50%);
+			width: 50%;
+			aspect-ratio: 1/1;
+			background: radial-gradient(circle, var(--clairvoyant-700) 20%, transparent 70%);
+		}
+		& .bottomRadial {
+			position: absolute;
+			bottom: 0;
+			transform: translate(-50%, 50%);
+			width: 30%;
+			aspect-ratio: 1/1;
+			background: radial-gradient(circle, var(--fountain-blue-600) 20%, transparent 70%);
+		}
+	}
+
+	.intro-container {
+		margin-top: 5rem;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(10, 1fr);
+		gap: 20px;
+
+		& .image {
+			height: 300px;
+			width: 100%;
+			border: 1px solid whitesmoke;
+			grid-column: 3/5;
+		}
+
+		& .text-container {
+			grid-column: 5/9;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			& .title-container {
+				display: flex;
+				gap: 16px;
+				align-items: center;
+				height: fit-content;
+
+				& span {
+					height: 50%;
+				}
+				& h1 {
+					font-size: 4rem;
+					color: var(--clairvoyant-300);
+					margin: 0px;
+					text-align: center;
+					padding-left: 16px;
+				}
+			}
+
+			& p {
+				color: var(--clairvoyant-50);
+				font-size: large;
+				text-wrap: balance;
+				padding-inline: 1rem;
+			}
+		}
+	}
+
+	html.light {
+		& .intro-section {
+			background-color: seashell;
+			transition: background-color 300ms;
+		}
+
+		& .intro-container {
+			& .text-container {
+				& .title-container {
+					& h1 {
+						color: var(--clairvoyant-600);
+					}
+				}
+
+				& p {
+					color: var(--clairvoyant-950);
+					filter: brightness(0);
+				}
+			}
+		}
+	}
+</style>
