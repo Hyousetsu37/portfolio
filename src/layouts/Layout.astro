@@ -1,18 +1,18 @@
 ---
 interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,30 +22,65 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--fountain-blue-50: #f1fafa;
+		--fountain-blue-100: #dbf0f2;
+		--fountain-blue-200: #bce1e5;
+		--fountain-blue-300: #8ecbd2;
+		--fountain-blue-400: #55abb7;
+		--fountain-blue-500: #3c909e;
+		--fountain-blue-600: #357785;
+		--fountain-blue-700: #30616e;
+		--fountain-blue-800: #2e515c;
+		--fountain-blue-900: #2a454f;
+		--fountain-blue-950: #182c34;
+
+		--fuchsia-pink-50: #fdf6fd;
+		--fuchsia-pink-100: #f8edfa;
+		--fuchsia-pink-200: #f1daf4;
+		--fuchsia-pink-300: #e8bceb;
+		--fuchsia-pink-400: #db94de;
+		--fuchsia-pink-500: #c76acb;
+		--fuchsia-pink-600: #b557b7;
+		--fuchsia-pink-700: #903b90;
+		--fuchsia-pink-800: #763275;
+		--fuchsia-pink-900: #622d60;
+		--fuchsia-pink-950: #3e143c;
+
+		--clairvoyant-50: #fbf5fe;
+		--clairvoyant-100: #f5e9fe;
+		--clairvoyant-200: #ebd3fb;
+		--clairvoyant-300: #dfb0f7;
+		--clairvoyant-400: #cc81f1;
+		--clairvoyant-500: #b450e5;
+		--clairvoyant-600: #9b30c9;
+		--clairvoyant-700: #8225a6;
+		--clairvoyant-800: #6c2088;
+		--clairvoyant-900: #5b1f70;
+		--clairvoyant-950: #440a57;
+
+		--dark-background: #3d3c38;
+
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		background: var(--dark-background);
+		height: 150vh;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	html.light body {
+		background-color: seashell;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		scroll-behavior: smooth;
 	}
 </style>
+<!-- background: linear-gradient(225deg, var(--fountain-blue-400), var(--fountain-blue-950)); -->
