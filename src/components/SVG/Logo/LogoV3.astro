@@ -1,0 +1,105 @@
+---
+interface Props {
+	colorFillers?: string
+	barFiller?: string
+}
+
+const { colorFillers, barFiller } = Astro.props
+---
+
+<svg
+	id="eHrhCNS0mbd1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="0 0 600 440"
+	shape-rendering="geometricPrecision"
+	text-rendering="geometricPrecision"
+>
+	<defs>
+		<linearGradient
+			id="eHrhCNS0mbd5-fill"
+			x1="0"
+			y1="0.691615"
+			x2="1.172302"
+			y2="0.506029"
+			spreadMethod="pad"
+			gradientUnits="objectBoundingBox"
+			gradientTransform="translate(0 0)"
+		>
+			<stop id="eHrhCNS0mbd5-fill-0" offset="33%" stop-color="#faf5ff" class="whitestop"></stop>
+			<stop id="eHrhCNS0mbd5-fill-1" offset="64%" stop-color="#36017e"></stop>
+		</linearGradient>
+		<linearGradient
+			id="eHrhCNS0mbd6-fill"
+			x1="0.035223"
+			y1="0.154794"
+			x2="0.935462"
+			y2="0.840097"
+			spreadMethod="pad"
+			gradientUnits="objectBoundingBox"
+			gradientTransform="translate(0 0)"
+		>
+			<stop id="eHrhCNS0mbd6-fill-0" offset="37%" stop-color="#36017e"></stop>
+			<stop id="eHrhCNS0mbd6-fill-1" offset="100%" stop-color="#81f8fe"></stop>
+		</linearGradient>
+	</defs>
+	<g transform="matrix(.905442 0 0 1.046312-36.45777-172.426184)">
+		<path
+			d="M437.111403,668.365156l.18082-64.121861-265.489254-108.77041L437.111403,387.488351v-63.348917L100.532803,465.83348l.057614,58.611173L437.111403,668.365156Z"
+			transform="matrix(.641242 0 0 1 20.355878-121.195755)"
+			fill="#faf5ff"
+			class="whitefill"
+			stroke-width="2"
+		>
+		</path>
+		<path
+			d="M464.719743,668.365157h52.482738l96.278882-344.225722h-50.654517L464.719743,668.365157Z"
+			transform="matrix(.844817 0 0 1-84.183189-121.195756)"
+			fill="url(#eHrhCNS0mbd5-fill)"
+			stroke-width="2"
+		>
+		</path>
+		<path
+			d="M623.534181,356.512345L712.508857,625.8667l102.31213-301.727266h63.313571l.81496,344.225722h-46.09321l.808377-280.876805-97.649371,280.876805h-50.374676L603.789276,427.541351l19.744905-71.029006Z"
+			transform="matrix(.844817 0 0 1-84.183189-121.195756)"
+			fill="url(#eHrhCNS0mbd6-fill)"
+			stroke-width="2"
+		>
+		</path>
+	</g>
+</svg>
+
+<style>
+	svg {
+		height: 100%;
+	}
+
+	.whitestop {
+		transition: stop-color 500ms;
+		stop-color: var(--light-text);
+	}
+	.whitefill {
+		transition: fill 500ms;
+		fill: var(--light-text);
+	}
+
+	html.light .whitestop {
+		transition: stop-color 500ms;
+		stop-color: var(--dark-background);
+	}
+
+	.C,
+	.endM {
+		transition: fill 500ms;
+	}
+	/* 
+	html.light .slash {
+		transition: fill 500ms;
+		fill: #8225a6;
+	} */
+
+	html.light .whitefill {
+		transition: fill 500ms;
+		fill: var(--dark-background);
+	}
+</style>

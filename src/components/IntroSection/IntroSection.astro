@@ -1,5 +1,7 @@
 ---
 import Logo from '../SVG/Logo/Logo.astro'
+import LogoV2 from '../SVG/Logo/LogoV2.astro'
+import LogoV3 from '../SVG/Logo/LogoV3.astro'
 ---
 
 <section class="intro-section" id="start">
@@ -9,7 +11,7 @@ import Logo from '../SVG/Logo/Logo.astro'
 
 		<div class="text-container">
 			<div class="title-container">
-				<h1>Cristian Marin</h1><span><Logo /></span>
+				<h1>Cristian Marin</h1><span><LogoV3 /></span>
 			</div>
 			<p>
 				Hey there! I'm a front-end developer with a knack for turning ideas into websites. About
@@ -32,8 +34,8 @@ import Logo from '../SVG/Logo/Logo.astro'
 		width: 100%;
 		margin-inline: auto;
 		grid-column: 1/-1;
-		background-color: var(--dark-background);
-		transition: background-color 300ms;
+		/* background-color: var(--dark-background);
+		transition: background-color 300ms; */
 		overflow: hidden;
 
 		& .topRadial {
@@ -87,6 +89,8 @@ import Logo from '../SVG/Logo/Logo.astro'
 				}
 				& h1 {
 					font-size: 4rem;
+					font-weight: 500;
+					font-family: 'EB Garamond', serif;
 					color: var(--clairvoyant-300);
 					margin: 0px;
 					text-align: center;
@@ -95,7 +99,7 @@ import Logo from '../SVG/Logo/Logo.astro'
 			}
 
 			& p {
-				color: var(--clairvoyant-50);
+				color: var(--light-text);
 				font-size: large;
 				text-wrap: balance;
 				padding-inline: 1rem;
@@ -104,10 +108,10 @@ import Logo from '../SVG/Logo/Logo.astro'
 	}
 
 	html.light {
-		& .intro-section {
-			background-color: seashell;
+		/* & .intro-section {
+			background-color: var(--light-background);
 			transition: background-color 300ms;
-		}
+		} */
 
 		& .intro-container {
 			& .text-container {
@@ -118,8 +122,8 @@ import Logo from '../SVG/Logo/Logo.astro'
 				}
 
 				& p {
-					color: var(--clairvoyant-950);
-					filter: brightness(0);
+					color: var(--dark-text);
+					filter: brightness(0.5);
 				}
 			}
 		}

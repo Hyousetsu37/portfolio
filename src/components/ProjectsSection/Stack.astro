@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+	projectStack?: string[]
+	showName?: boolean
+}
+
+const { projectStack = ['css'], showName = true } = Astro.props
+---
+
+<div class="stack-container">
+	{
+		projectStack.map((stack) => {
+			const stackName = `${stack.charAt(0).toUpperCase()}${stack.slice(1)}`
+			return (
+				<div class="stack">
+					<Icon name={stack} /> {showName && <span class="stack-name">{stackName}</span>}
+				</div>
+			)
+		})
+	}
+</div>
+
+<style>
+	.stack-container {
+		width: 100%;
+		padding-block: 8px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+
+		& .stack {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: var(--stack-background);
+			padding-inline: 16px;
+			padding-block: 5px;
+			border-radius: 20px;
+
+			& .stack-name {
+				padding-left: 4px;
+			}
+		}
+	}
+</style>

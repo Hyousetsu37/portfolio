@@ -1,10 +1,12 @@
 ---
 import Logo from '../SVG/Logo/Logo.astro'
+import LogoV2 from '../SVG/Logo/LogoV2.astro'
+import LogoV3 from '../SVG/Logo/LogoV3.astro'
 ---
 
 <nav class="navigation">
 	<a class="logo-tag" href="#start">
-		<Logo />
+		<LogoV3 />
 	</a>
 	<div class="links-container">
 		<a href="#start"> Home </a>
@@ -88,7 +90,7 @@ import Logo from '../SVG/Logo/Logo.astro'
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: var(--light-text);
 		font-size: clamp(12px, 32px, 1.2vw);
 		transition: color 500ms;
 	}

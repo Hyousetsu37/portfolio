@@ -1,0 +1,26 @@
+[
+	{
+		"projectName": "Some stock project",
+		"projectImage": "/project-images/SomeStockImage.jpg",
+		"projectDescription": "Some short project description that I will make up",
+		"projectTechStack": ["html", "tailwind", "javascript", "react", "reactrouter"],
+		"projectDemoLink": "#",
+		"projectRepoLink": "#"
+	},
+	{
+		"projectName": "Some stock project v2",
+		"projectImage": "/project-images/SomeStockImageV2.jpg",
+		"projectDescription": "Some short project description that I will make up 2",
+		"projectTechStack": ["html", "tailwind", "javascript", "next"],
+		"projectDemoLink": "#",
+		"projectRepoLink": "#"
+	},
+	{
+		"projectName": "Some stock project v3",
+		"projectImage": "/project-images/SomeStockImageV3.jpg",
+		"projectDescription": "Some short project description that I will make up 3",
+		"projectTechStack": ["html", "css", "javascript", "typescript", "astro"],
+		"projectDemoLink": "#",
+		"projectRepoLink": "#"
+	}
+]

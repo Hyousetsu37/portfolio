@@ -1,0 +1,183 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { Project } from './ProjectsGrid.astro'
+import Stack from './Stack.astro'
+
+const {
+	projectName,
+	projectImage,
+	projectDescription,
+	projectTechStack,
+	projectRepoLink,
+	projectDemoLink
+} = Astro.props as Project
+---
+
+<article class="card">
+	<div class="content">
+		<a href="" class="image-anchor"
+			><img
+				src={projectImage}
+				alt={`Showing the starter page of the project ${projectName}`}
+				class="project-image"
+			/></a
+		>
+		<div class="text-container">
+			<h2 class="project-title">{projectName}</h2>
+			<p class="project-description">{projectDescription}</p>
+			<Stack projectStack={projectTechStack} />
+			<div class="separator"></div>
+			<div class="links" id="links">
+				<a href={projectRepoLink} class="link">
+					<Icon class="github" name="github" />
+					<span>Repo</span>
+				</a>
+				<a href={projectDemoLink} class="link">
+					<Icon class="internet" name="internet" />
+					<span>Demo</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</article>
+
+<style>
+	.card {
+		/* Dimensions */
+		width: 100%;
+		padding: 0.2rem;
+		border-radius: 0.5rem;
+
+		/* Background, Colors and transitions */
+		background-image: linear-gradient(
+			45deg,
+			var(--fountain-blue-400),
+			var(--clairvoyant-500) 30%,
+			var(--dark-border) 60%
+		);
+		background-size: 400%;
+		background-position: 100%;
+		color: var(--light-text);
+		transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+		/* Shadow */
+		box-shadow: 0px 0px 50px -20px var(--light-background);
+
+		&:hover {
+			background-position: 0%;
+			transform: scale(1.02);
+		}
+
+		& .content {
+			border-radius: 0.5rem;
+			background-color: var(--dark-background);
+			height: 100%;
+
+			& .image-anchor {
+				display: block;
+				aspect-ratio: 16/9;
+				width: 100%;
+				overflow: hidden;
+				border-top-left-radius: 0.5rem;
+				border-top-right-radius: 0.5rem;
+
+				& img {
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+
+			& .text-container {
+				padding-inline: 8px;
+
+				& .separator {
+					width: 100%;
+					border-top: 1px solid var(--light-background);
+					margin-block: 8px;
+				}
+
+				& .links {
+					margin-block: 16px;
+					padding-inline: 8px;
+					display: flex;
+					justify-content: space-between;
+
+					gap: 12px;
+
+					& .link {
+						display: flex;
+						gap: 2px;
+						align-items: center;
+						text-decoration: none;
+						color: var(--light-text);
+						border: 2px outset;
+						border-color: var(--light-border);
+						padding-block: 4px;
+						padding-inline: 8px;
+						border-radius: 8px;
+						transition: all 100ms ease-in;
+						transition: color 300ms;
+
+						&:active {
+							transform: translateY(2px);
+							border-style: inset;
+						}
+
+						& .github {
+							border-radius: 50%;
+							background: black;
+						}
+
+						& .internet {
+							border-radius: 50%;
+							background: var(--light-background);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	html.light .card {
+		background-image: linear-gradient(
+			45deg,
+			var(--fountain-blue-400),
+			var(--clairvoyant-500) 30%,
+			var(--light-border) 60%
+		);
+
+		/* Shadow */
+		box-shadow: 0px 0px 40px -20px var(--dark-background);
+
+		& .content {
+			background: var(--light-background);
+
+			& .text-container {
+				h2 {
+					color: var(--dark-text);
+					filter: brightness(0.9);
+				}
+				p {
+					color: var(--dark-text);
+					filter: brightness(0.5);
+				}
+				& #links {
+					& .link {
+						transition: all 300ms;
+						color: var(--dark-text);
+						border-color: var(--dark-middle-border);
+						& .github {
+							border-radius: 50%;
+							background: var(--light-background);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* html.light .card .content .text-container .links .link {
+		border-color: blue;
+		color: var(--clairvoyant-500);
+	} */
+</style>
